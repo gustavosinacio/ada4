@@ -8,4 +8,10 @@
 
 body {
   font-family: Quicksand, sans-serif;
+
+  /* div {
+    & + div {
+      border: 1px dashed red;
+    }
+  } */
 }

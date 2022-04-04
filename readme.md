@@ -10,6 +10,7 @@
   <li>yarn add -D cross-env</li>
   <li>yarn add -D style-loader css-loader</li>
   <li>yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh</li>
+  <li>yarn add -D typescript @babel/preset-typescript</li>
 </ol>
 
 ## Files to create
