@@ -7,6 +7,9 @@
 
   <li>yarn add -D webpack webpack-cli webpack-dev-server</li>
   <li>yarn add -D html-webpack-plugin</li>
+  <li>yarn add -D cross-env</li>
+  <li>yarn add -D style-loader css-loader</li>
+  <li>yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh</li>
 </ol>
 
 ## Files to create
