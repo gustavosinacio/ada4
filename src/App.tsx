@@ -3,5 +3,5 @@ export function App() {
     <div>
       <h1>This is Ada4</h1>
     </div>
-  );
+  )
 }

@@ -1,24 +1,24 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-const isDevelopment = process.env.NODE_ENV !== "production";
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  mode: isDevelopment ? "development" : "production",
-  devtool: isDevelopment ? "eval-source-map" : "source-map",
-  entry: path.resolve(__dirname, "src", "index.tsx"),
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map',
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "public"),
+      directory: path.resolve(__dirname, 'public'),
     },
     hot: true,
     compress: true,
@@ -26,11 +26,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
+      template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     isDevelopment && new ReactRefreshWebpackPlugin(),
     new webpack.ProvidePlugin({
-      React: "react",
+      React: 'react',
     }),
   ].filter(Boolean),
   module: {
@@ -39,10 +39,10 @@ module.exports = {
         test: /\.(j|t)sx$/,
         exclude: /node_modules/,
         use: {
-          loader: require.resolve("babel-loader"),
+          loader: require.resolve('babel-loader'),
           options: {
             plugins: [
-              isDevelopment && require.resolve("react-refresh/babel"),
+              isDevelopment && require.resolve('react-refresh/babel'),
             ].filter(Boolean),
           },
         },
@@ -50,8 +50,8 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
-};
+}
