@@ -19,3 +19,40 @@
   <li>babel.config.js</li>
   <li>webpack.config.js</li>
 </ol>
+
+## eslint and prettier config
+
+<ol>
+  <li>add eslint with: yarn add eslint prettier -D</li>
+  <li>run: yarn create @eslint/config</li>
+  <li>add .prettierrc if needed</li>
+</ol>
+
+## add import order plugin
+
+yarn add -D eslint-plugin-simple-import-sort
+
+add to eslitrc:
+
+```js
+plugins: [...,'simple-import-sort', 'import'],
+rules: {
+  ...
+  'simple-import-sort/imports': 'error',
+  'simple-import-sort/exports': 'error',
+  'import/first': 'error',
+  'import/newline-after-import': 'error',
+  'import/no-duplicates': 'error'
+}
+```
+
+---
+
+## TODO
+
+- add ordering imports
+-
+
+```
+
+```
