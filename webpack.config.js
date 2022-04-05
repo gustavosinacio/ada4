@@ -5,6 +5,11 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
+const createStyledComponentsTransformer =
+  require('typescript-plugin-styled-components').default
+
+const styledComponentsTransformer = createStyledComponentsTransformer()
+
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map',
@@ -41,6 +46,9 @@ module.exports = {
         use: {
           loader: require.resolve('babel-loader'),
           options: {
+            getCustomTransformers: () => ({
+              before: [styledComponentsTransformer],
+            }),
             plugins: [
               isDevelopment && require.resolve('react-refresh/babel'),
             ].filter(Boolean),
